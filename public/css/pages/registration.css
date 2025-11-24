@@ -1,0 +1,561 @@
+body {
+    background: linear-gradient(135deg, #7C3AED 0%, #4C58DF 100%);
+}
+
+.registration-container {
+    width: 100vw;
+    display: flex;
+    height: 100vh;
+}
+
+/* Left Side - Purple Section */
+.left-section {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 60px;
+    position: relative;
+    color: white;
+}
+
+.back-btn {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.back-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.back-btn i {
+    color: white;
+    font-size: 24px;
+}
+
+.welcome-text {
+    text-align: center;
+}
+
+.welcome-text p {
+    font-size: 18px;
+    margin-bottom: 10px;
+    opacity: 0.9;
+}
+
+.welcome-text h1 {
+    font-size: 56px;
+    font-weight: 700;
+    margin-bottom: 80px;
+}
+
+
+/* Right Side - White Section */
+.right-section {
+    width: 55%;
+    border-top-left-radius: 15%;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 80px;
+}
+
+.header {
+    height: 11%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    width: 95px;
+}
+
+.logo-icon {
+    width: 40px;
+    height: 40px;
+    background: #4C58DF;
+    border-radius: 8px;
+}
+
+.logo h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #4C58DF;
+}
+
+.header-btns {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-link {
+    padding: 12px 24px;
+    background: transparent;
+    border: none;
+    color: #4C58DF;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.btn-link:hover {
+    opacity: 0.7;
+}
+
+.btn-outline {
+    padding: 12px 32px;
+    background: transparent;
+    border: 2px solid #4C58DF;
+    color: #4C58DF;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+    background: #4C58DF;
+    color: white;
+}
+
+.registration-form {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.progress-bar {
+    position: absolute;
+    top: 20px; 
+    left: 0;
+    right: 0;
+    height: 10px;
+    background-color: #d9d9d9a1;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(to right, #7c3aed, #a78bfa);
+    border-radius: 10px;
+}
+
+.progress-fill {
+    width: 25%;
+}
+
+#step-1 h1, #step-2 h1, #step-3 h1, #step-4 h1, #confirm-submission h1, #step-3-donor h1 {
+    font-size: 30px;
+    margin-bottom: 6px;
+}
+
+.input-fields {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    height: fit-content;
+    padding-top: 15px;
+}
+
+.input-fields h1 {
+    font-weight: 500;
+}
+
+
+#step-2, #step-3, #step-4, #step-3-donor {
+    display: none;
+    padding-top: 17px;
+    height: 574px;
+}
+
+#step-1 p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 8%;
+}
+
+#step-2 p, #step-3 p, #step-4 p, #confirm-submission p, #step-3-donor p{
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 2%;
+}
+
+.role {
+    cursor: pointer;
+    width: 65%;
+    display: flex;
+    align-items: center;
+    border: 2px dashed #4C58DF;
+    border-radius: 12px; 
+    padding: 16px; 
+    transition: transform 0.1s ease-in;
+}
+
+.role:hover {
+    transform: translateY(-2px);
+    background-color: #707bf270;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 10px;
+}
+
+.form-title p {
+    font-size: 16px;
+    color: #666;
+}
+
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.name-inputs {
+    display: flex;
+    gap: 20px;
+}
+
+.year-inputs {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    display: grid;
+    gap: 20px;
+}
+
+.year-inputs > div:first-child {
+    grid-column: 1 / 4;
+}
+.year-inputs > div:last-child {
+    width: 121px;
+    grid-column: 4 / 5;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 16px 20px;
+    border: 2px solid #E5E7EB;
+    border-radius: 12px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #4C58DF;
+}
+
+.step-2-back-btn, .step-3-back-btn, .donor-step-3-back-btn, .step-4-back-btn, .donor-step-4-back-btn, .step-5-back-btn, .donor-step-5-back-btn, .profile-options {
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.step-2-back-btn:hover, .step-3-back-btn:hover, .donor-step-3-back-btn:hover, .step-4-back-btn:hover, .donor-step-4-back-btn:hover, .step-5-back-btn:hover, .donor-step-5-back-btn:hover {
+    background: rgba(76, 88, 223, 0.2);
+}
+
+.profile-options i {
+    color: #fff;
+}
+
+.step-2-back-btn i, .step-3-back-btn i, .donor-step-3-back-btn i, .step-4-back-btn i, .donor-step-4-back-btn i, .step-5-back-btn i, .donor-step-5-back-btn i {
+    color: #000;
+    font-size: 24px;
+}
+
+.section-btns {
+    display: none;
+    justify-content: space-between;
+}
+
+.section-btns3 {
+    justify-content: space-between;
+    display: flex;
+}
+
+.required {
+    margin-left: 3px;
+    color: #EF4444;
+}
+
+
+.upload-container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.upload-container label {
+    text-align: left;
+}
+
+.upload-container .title {
+    color: #4a90e2;
+    font-size: 14px;
+    margin-bottom: 16px;
+    text-align: left;
+}
+
+.image-frame {
+    width: 280px;
+    height: 350px;
+    border: 2px dashed rgba(112, 122, 242, 0.8);
+    border-radius: 12px; 
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    transition: border-color 0.3s;
+    margin: 20px auto;
+}
+
+.image-frame:hover {
+    border-color: rgba(112, 122, 242, 0.8);
+    background-color: #707bf229;
+;
+}
+
+.image-frame.has-image {
+    border: 2px dashed rgba(112, 122, 242, 0.8);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.placeholder {
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+
+.placeholder-icon {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.placeholder-icon > div {
+    background-color: #707AF2;
+    position: absolute;
+}
+
+.placeholder-icon > div:first-child {
+    /* Horizontal line */
+    width: 60px;
+    height: 3px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.placeholder-icon > div:last-child {
+    /* Vertical line */
+    width: 2.5px;
+    height: 60px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#imagePreview {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    display: none;
+}
+
+#fileInput {
+    display: none;
+}
+
+.review-registration, .donor-review-registration {
+    background-color: #fff;
+    display: none;
+    flex-direction: column;
+    width: 90vw;
+    height: 90vh;
+    margin-top: 34px;
+    gap: 20px;
+}
+
+.review-registration h1, .donor-review-registration h1 {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.review-contents {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.img-container {
+    width: 100%;
+    height: 70.5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.img-container-profile {
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    justify-content: center;
+    background-color: #D9D9D9;
+    border-radius: 50%;
+    position: relative;
+    overflow: visible;
+}
+
+.img-container img {
+    padding: 40px;
+}
+
+.img-container button {
+    position: absolute;
+    background-color: #4C58DF;
+    right: 0;
+    bottom: 0;
+}
+
+.profile-options:hover {
+    background-color: #7780e5
+}
+
+.section-btns5 {
+    width: 90%;
+    display: flex;
+    align-self: center;
+    justify-content: space-between;
+}
+
+.cancel-submit {
+    display: flex;
+    gap: 12px;
+}
+
+/* Loader styles */
+.btn-primary.loading {
+    position: relative;
+    color: transparent;
+    pointer-events: none;
+}
+
+.btn-primary.loading::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    left: 50%;
+    margin-left: -10px;
+    margin-top: -10px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+#confirm-submission {
+    height: 500px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    display: none;
+}
+
+#step-3-donor {
+    display: none;
+}
+
+.phone-input-container {
+    display: flex;
+    border: 2px solid #E5E7EB;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: border-color 0.3s ease;
+    background: white;
+}
+
+.phone-input-container input {
+    border: none;
+}
+
+.phone-input-container:focus-within {
+    border-color: #4C58DF;
+}
+
+.country-code {
+    padding: 16px 8px 16px 16px;
+    border: none;
+    background: white;
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    cursor: pointer;
+    outline: none;
+    border-right: 2px solid #E5E7EB;
+    min-width: 90px;
+    /* Custom dropdown arrow */
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L5 5L9 1' stroke='%23666' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    padding-right: 32px;
+}
+
+.phone-number {
+    flex: 1;
+    padding: 16px 20px;
+    border: none;
+    font-size: 16px;
+    outline: none;
+    color: #333;
+}
+
+.phone-number::placeholder {
+    color: #9CA3AF;
+}
+

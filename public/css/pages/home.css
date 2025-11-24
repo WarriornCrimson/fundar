@@ -1,0 +1,131 @@
+
+body {
+    position: relative;
+}
+
+.logged-in-user-profile {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+    right: 0;
+    top: 0;
+}
+
+.logged-in-user-profile img {
+    outline: none;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    outline: 3px solid #7A3FFF;
+    cursor: pointer;
+}
+
+.logged-in-user-profile:hover {
+    transform: translateY(-2px);
+}
+
+.logout {
+    gap: 10px;
+    background-color: red;
+    width: fit-content;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    display: flex;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 9px;
+    cursor: pointer;
+    padding: 5px 10px;
+    position: absolute;
+    top: 90px;
+    right: 20px;
+}
+
+.logout.hide {
+    display: none;
+}
+
+.logout:hover {
+    background-color: #00000019;
+}
+
+aside {
+    text-align: center;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    box-shadow: 1px 4px 4px #0000002d ;
+    padding: 14px 9px;
+}
+
+aside img {
+    width: 95px;
+    margin-bottom: 40px;
+}
+
+aside ul {
+    width: 226px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+aside ul li {
+    border-radius: 13px;
+    padding: 10px 20px;
+    overflow: hidden;
+}
+
+aside ul li:hover {
+    background-color: rgba(76, 88, 223, 0.06);
+}
+
+aside ul li:hover i,
+aside ul li:hover p,
+aside ul li:hover a,
+aside ul li a.active i,
+aside ul li a.active p,
+aside ul li a.active {
+    color: #707AF2;
+
+}
+
+aside ul li a {
+    display: flex;
+    align-items: center;
+    position: relative;
+    color: #000000;
+}
+
+aside ul li a:visited {
+    color: #0000002d;
+}
+
+aside ul li a p {
+    position: absolute;
+    left: 48px;
+}
+
+aside ul li a i{
+    width: 30px;
+    font-size: 24px;
+    text-align: center;
+}
+
+.navbar a.active {
+    color: #707AF2;
+}
+
+li.active-nav {
+    background-color: rgba(76, 88, 223, 0.06);
+}
+
+.main-content {
+    margin-left: 250px;
+    width: calc(100% - 250px);
+}

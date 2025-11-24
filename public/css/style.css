@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-straight/css/uicons-solid-straight.css'); /*Verified Icon*/
+@import url('https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-chubby/css/uicons-solid-chubby.css'); /*AI Icon*/
+@import url('https://cdn-uicons.flaticon.com/3.0.0/uicons-bold-rounded/css/uicons-bold-rounded.css'); /*Check Mark*/
+@import url('https://cdn-uicons.flaticon.com/3.0.0/uicons-bold-rounded/css/uicons-bold-rounded.css'); /*Remove Mark*/
+@import url('https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'); /*Logout*/
+
+html {
+    scroll-behavior: smooth;
+}
+
+*{
+    font-family: "Inter";
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    font-size: 16px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+nav {
+    z-index: 1;
+    width: 100vw;
+    position: fixed;
+    padding: 10px 35px;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 50px;
+    cursor: pointer;
+}
+
+nav ul li:hover, nav ul li:active {
+    color: #707AF2;
+}
+
+button, a {
+    border: none;
+    cursor: pointer;
+}
+
+button:focus {
+    outline: none;
+}
+
+.rounded-btn {
+    padding: 16px 46px;
+    background-color: #4C58DF;
+    width: fit-content;
+    border-radius: 50px;
+    color: #fff;
+    font-weight: 600;
+    text-align: center;
+    align-self: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+.rounded-btn:hover {
+    background-color: #707bf2df;
+}
+
+.btn-primary {
+    background-color: #4c58df;
+    color: #ffffff;
+    border-radius: 6px;
+    padding: 15px 20px;
+    font-weight: 600;
+    font-size: 16px;
+    text-decoration: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #4c58dfc6;
+}
+
+.btn-primary.disabled {
+    background-color: #4c58dfc6;
+}
+
+.btn-cancel {
+    background-color: #FF5959;
+    color: #ffffff;
+    border-radius: 6px;
+    padding: 15px 20px;
+    font-weight: 600;
+    font-size: 16px;
+    text-decoration: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.btn-cancel:hover {
+    background-color: #ff5959c4;
+}
+
+.btn-secondary {
+    cursor: pointer;
+    width: fit-content;
+    background-color: #fff;
+    outline: 2px solid #4c58dfc5;
+    color: #4C58DF;
+    border-radius: 6px;
+    padding: 15px 20px;
+    font-weight: 600;
+    font-size: 16px;  
+    outline-offset: -2px;
+}
+
+.btn-secondary:hover {
+    background-color: #4c58dfab;
+    color: #ffffff;
+}
+
+.btn-secondary.disabled {
+    background-color: #4c58dfab;
+    color: #ffffff;    
+}
+
+.large-checkmark {
+    color: #707af2;
+    font-size:80px;
+    padding: 2px;
+    width: 120px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+

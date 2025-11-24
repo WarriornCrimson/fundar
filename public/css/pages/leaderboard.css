@@ -1,0 +1,12 @@
+.leaderboard-interface {
+    padding: 20px;
+    margin-left: 250px;
+    width: calc(100% - 250px);
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+}
+
+.leaderboard-container {
+    margin: 0 auto;
+}

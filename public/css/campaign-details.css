@@ -1,0 +1,913 @@
+@import url('https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'); /*Heart Outline*/
+@import url('https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css'); /*Heart Solid*/
+@import url('https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-straight/css/uicons-regular-straight.css'); /*Ellipses*/
+@import url('https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-straight/css/uicons-regular-straight.css'); /*Delete Icon*/
+@import url('https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'); /*Edit*/
+
+.back-navigation {
+    margin: 20px 20px;
+}
+
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: white;
+    border: 2px solid #E5E7EB;
+    border-radius: 8px;
+    color: #000000BF;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.back-btn:hover {
+    background: #F9FAFB;
+    border-color: #707AF2;
+    color: #707AF2;
+}
+
+.campaign-details-container {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 24px;
+    width: 1400px;
+    padding: 5px 20px 40px;
+    position: relative;
+}
+
+/* Left Column */
+.campaign-content {
+    background: white;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.user-info-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #E5E7EB;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px; 
+}
+
+.verified-profile {
+    width: 50px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.verified-profile i {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #E5E7EB;
+    height: fit-content;
+    position: absolute;
+    color: #7A3FFF;
+    left: 0;
+    bottom: 0;
+}
+
+.user-details {
+    flex: 1;
+}
+
+.user-name {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+.user-meta {
+    margin: 0;
+    font-size: 15px;
+    color: #666;
+}
+
+.bookmark-btn-detail {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+.bookmark-btn-detail i {
+    color: #7A3FFF;
+    padding: 2px;
+    font-size: 30px;
+}
+
+.campaign-image-detail {
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 24px;
+    position: relative;
+}
+
+.campaign-image-detail img {
+    display: block;
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.campaign-badge-detail {
+    width: 160px;
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    background: #60A5FA;
+    color: white;
+    padding: 3px 12px;
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: 400;
+    text-shadow: 1px 1px 6px rgba(0,0,0,0.3);
+    text-align: center;
+}
+
+.campaign-title-badge h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #000000BF;
+    margin: 0;
+}
+
+/* Tabs */
+.tabs-navigation {
+    display: flex;
+    gap: 0;
+    margin-bottom: 24px;
+    padding: 5px 0;
+}
+
+.tab-btn {
+    padding: 12px 24px;
+    background: none;
+    border: none;
+    border-bottom: 3px solid transparent;
+    color: #666;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    position: relative;
+    bottom: -2px;
+}
+
+.tab-btn:hover {
+    color: #707AF2;
+}
+
+.tab-btn.active {
+    color: #707AF2;
+    border-bottom-color: #707AF2;
+}
+
+.tab-content {
+    min-height: 400px;
+}
+
+.tab-panel {
+    display: none;
+}
+
+.tab-panel.active {
+    display: block;
+}
+
+.campaign-story-header h2, .comment-story-header h2 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+.campaign-story-content {
+    color: #000000BF;
+    font-size: 16px;
+    line-height: 1.8;
+    white-space: pre-line;
+}
+
+.campaign-story-content h1 {
+    font-size: 20px;
+}
+
+.campaign-story-content p {
+    margin-bottom: 16px;
+}
+
+.comments-section, .donations-section {
+    padding: 20px 0;
+}
+
+.comments-section h3, .donations-section h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: #1a1a1a;
+}
+
+.no-comments, .no-donations {
+    color: #666;
+    font-size: 16px;
+    text-align: center;
+    padding: 40px 0;
+}
+
+/* Right Column - Sidebar */
+.campaign-sidebar {
+    position: fixed;
+    top: 42px;
+    right: 75px;
+    height: fit-content;
+    width: 370px;
+}
+
+.progress-title {
+    color: #707AF2;
+    font-size: 30px;
+    font-weight: 600;
+    margin: 0 0 20px 0;
+}
+
+.campaign-progress-card {
+    background: white;
+    border: 2px solid #707AF2;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    background-color: #7A3FFF14;
+}
+
+.amount-raised {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.amount-raised i {
+    color: #7A3FFF;
+    padding: 2px;
+    font-size: 24px;
+}
+
+.amount-text {
+    font-size: 30px;
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+.goal-text {
+    font-size: 16px;
+    color: #666;
+}
+
+.progress-bar-detail {
+    width: 100%;
+    height: 12px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.3),
+        transparent
+    );
+    outline: 0.5px solid black;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 12px;
+}
+
+.progress-fill-detail {
+    width: var(--width);
+    height: 100%;
+    background: #04F468;
+    outline: 0.5px solid black;
+    border-radius: 10px;
+    transition: width 0.3s ease;
+}
+
+.funded-percentage {
+    color: #000000BF;
+    font-size: 16px;
+    margin: 0 0 20px 0;
+}
+
+.campaign-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin-bottom: 24px;
+    padding: 16px 0;
+    border-top: 1px solid #E5E7EB;
+    border-bottom: 1px solid #E5E7EB;
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #000000BF;
+    font-size: 15px;
+}
+
+.meta-item i {
+    color: #7A3FFF;
+    font-size: 18px;
+    text-align: center;
+    padding: 5px;
+}
+
+.campaign-stats-float {
+    display: flex;
+    justify-content: space-between;
+}
+
+.donate-btn-detail {
+    width: 45%;
+    padding: 14px 24px;
+    background: #7A3FFF;
+    border: 2px solid #7A3FFF;
+    color: white;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    height: fit-content;
+    margin-bottom: 10px;
+}
+
+.donate-btn-detail:hover {
+    background: #793fffc5;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+}
+
+.action-btn-detail {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #707AF2;
+    color: white;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.action-btn-detail:hover {
+    background: #5A63D8;
+    transform: translateY(-2px);
+}
+
+.action-btn-detail.upvoted,
+.action-btn-detail.downvoted,
+.action-btn-detail.copied {
+    background: #5A63D8;
+}
+
+.vote-count{
+    padding: 3px 1px;
+    font-weight: 500;
+    gap: 2px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.save-campaign {
+    position: fixed;
+    top: 92vh;
+    left: 46%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px 24px;
+    border-radius: 9px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    background: #707AF2;
+    color: #fcf9fc;
+    animation: slideIn 0.4s ease;
+}
+
+.save-campaign i {
+    padding: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.save-campaign.show {
+    display: flex;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    } to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .campaign-details-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .campaign-sidebar {
+        position: static;
+    }
+}
+
+
+.donation-popup-blur {
+    z-index: 99;
+    background: #1d1a1a67;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.donation {
+    background: #ffffff;
+    width: 580px;
+    height: fit-content;
+    padding: 27px 22px;
+    border-radius: 22px;
+    border: 1px solid #707AF2;
+}
+
+.hide {
+    display: none;
+}
+
+.donation-name {
+    font-weight: 600;
+    margin-bottom: 13px;
+}
+
+.campaign-summary p {
+    color: #000000BF;
+}
+
+.campaign-summary p:first-child {
+    margin-bottom: 8px;
+}
+
+.summary-content {
+    border: 1px solid #000000BF;
+    border-radius: 9px;
+    padding: 14px 12px;
+}
+
+.campaign-title-sm {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.campaign-background {
+    line-height: 1.48;
+    margin-bottom: 15px;
+}
+
+.progress-amount-right {
+    margin-top: 14px;
+    text-align: right;
+}
+
+.qr-options {
+    margin-top: 20px;
+}
+
+.qr-options p:first-child {
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.qr {
+    margin-top: 9px;
+    padding: 15px;
+    width: 214px;
+    height: fit-content;
+    border: 1px solid #000000;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.qr img {
+    width: 85px;
+}
+
+.qr:hover {
+    border: 1px solid #707AF2; 
+    background: rgba(112, 122, 242, 0.1);
+}
+
+.qr.active {
+    border: 1px solid #707AF2; 
+    background: rgba(112, 122, 242, 0.1);    
+}
+
+.donation-action-btns {
+    margin-top: 30px;
+    display: flex;
+    justify-content: right;
+    gap: 6px;
+}
+
+.proceed.disabled {
+    background-color: #8991e1;
+    cursor: not-allowed;
+}
+
+.campaign-qr-gcash img, .campaign-qr-paypal img {
+    margin-top: 20px;
+}
+
+.campaign-qr-img {
+    display: flex;
+    justify-content: center;
+}
+
+.upload-container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.image-frame {
+    width: 280px;
+    height: 350px;
+    border: 2px dashed rgba(112, 122, 242, 0.8);
+    border-radius: 12px; 
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    transition: border-color 0.3s;
+    margin: 20px auto;
+}
+
+.image-frame:hover {
+    border-color: rgba(112, 122, 242, 0.8);
+    background-color: #707bf229;
+;
+}
+
+.image-frame.has-image {
+    border: 2px dashed rgba(112, 122, 242, 0.8);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.placeholder {
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+
+.placeholder-icon {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.placeholder-icon > div {
+    background-color: #707AF2;
+    position: absolute;
+}
+
+.placeholder-icon > div:first-child {
+    /* Horizontal line */
+    width: 60px;
+    height: 3px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.placeholder-icon > div:last-child {
+    /* Vertical line */
+    width: 2.5px;
+    height: 60px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#imagePreview {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    display: none;
+}
+
+.proceed.loading {
+            position: relative;
+            color: transparent;
+            pointer-events: none;
+}
+
+.proceed.loading::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            top: 50%;
+            left: 50%;
+            margin-left: -10px;
+            margin-top: -10px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-top-color: #fff;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+}
+
+        @keyframes spin {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+        }
+
+.confirmation-popup {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 500px;
+}
+
+.confirmation-popup i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+}
+
+.confirmation-popup h1 {
+    font-size: 30px;
+    font-weight: 400;
+}
+
+.confirmation-popup p {
+    margin-top: 3px;
+    color: #000000BF;
+}
+
+.file-input {
+    display: none;
+}
+
+#comments-panel .user-info-header {
+    border-bottom: none;
+}
+
+.write-comment-area {
+    resize: none;
+    width: 100%;
+    height: 150px;
+    border-radius: 9px;
+    padding: 17px;
+    outline: none;
+    
+}
+
+.write-comment-area:focus {
+    border: 2px solid #707bf2bc;
+}
+
+.current-user-comment-area .user-info-header {
+    margin-bottom: -1px;
+}
+
+.current-user-comment-area button {
+    display: flex;
+    justify-self: right;
+}
+.comment-limit.reached {
+    color: red;
+}
+
+.comment-content {
+    line-height: 1.57;
+    color: #000000BF;
+}
+
+.user-comment {
+    position: relative;
+}
+
+.user-comment .user-info-header {
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+
+.post-comment.disabled {
+    background-color: #4c58dfc6;
+    cursor: not-allowed;
+}
+
+.comment-story-header {
+    margin-bottom: 20px;
+}
+
+.heart {
+    display: flex;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    width: fit-content;
+    justify-self: right;
+}
+
+.heart i {
+    padding: 5px;
+    font-size: 25px;
+}
+
+.heart.liked {
+    color: red;
+}
+
+.heart:hover {
+    transform: translateY(-2px);
+}
+
+.user-donation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    border-bottom: 1px solid #00000026;
+}
+
+
+.donor-name {
+    width: 500px;
+}
+
+.donor-detail {
+    color: #000000BF;
+    width: 300px;
+}
+
+.comment-ellipsis i {
+    cursor: pointer;
+    font-size: 22px;
+}
+
+.comment-settings {
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 9px;
+    cursor: pointer;
+    position: absolute;
+    top: 50px;
+    right: 20px;
+    width: 150px;
+    z-index: 2;
+}
+
+.comment-settings.hide {
+    display: none;
+}
+
+.edit-comment, .delete-comment {
+    margin: 0 10px;
+    display: flex;
+    align-items: center; 
+    width: 100%;
+}
+
+.delete-comment:hover {
+    color: #ff5959c4;
+}
+
+.delete-comment:hover, .edit-comment:hover {
+    background-color: #00000019;
+}
+
+.delete-comment i, .edit-comment i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    padding: 7px;
+    margin-left: 20px;
+    margin-right: 15px;
+}
+
+.postTime {
+    font-weight: 400;
+}
+
+.comment-cancel-post {
+    gap: 10px;
+    display: flex;
+    justify-content: right;
+}
+
+.cancel-edit.hide {
+    display: none;
+}
+
+.similar-campaigns-section {
+    max-width: 1400px;
+    margin: 40px auto;
+}
+
+.similar-campaigns-section h2 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 24px;
+    color: #1a1a1a;
+}
+
+.campaigns-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    padding: 10px 10px;
+}
+
+.heart-count {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: fit-content;
+}
+
+.heart-count.hide {
+    visibility: hidden;
+}
+
+.postTime {
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.vote-number.hidden {
+    display: none;
+}
+
+/* Responsive: Stack on smaller screens */
+@media (max-width: 768px) {
+    .campaigns-grid {
+        grid-template-columns: 1fr;
+    }
+}

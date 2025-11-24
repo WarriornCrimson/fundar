@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/pages/home.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/pages/leaderboard.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/campaign.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/pages/donation.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+    <title>Leaderboard | FUNDar</title>
+</head>
+<body>
+    <x-side-bar/>
+    <div class="leaderboard-interface">
+        <div class="leaderboard-container">
+            <img src="{{ asset('images/Leaderboard Banner.png') }}">
+        </div>
+    </div>
+</body>
+</html>
