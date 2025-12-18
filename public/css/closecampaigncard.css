@@ -1,0 +1,468 @@
+/* Closed Campaign Badge */
+.campaign-card-sm-closed {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: #F3F4F6;
+    color: #6B7280;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    border: 1px solid #D1D5DB;
+}
+
+.campaign-card-sm-closed i {
+    font-size: 0.9rem;
+}
+
+/* Campaign Closed Stats */
+.campaign-closed-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin: 16px 0;
+    padding: 16px;
+    background: #F9FAFB;
+    border-radius: 12px;
+    border: 1px solid #E5E7EB;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.stat-item i {
+    font-size: 1.5rem;
+    color: #707AF2;
+}
+
+.stat-details {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.stat-label {
+    font-size: 0.75rem;
+    color: #6B7280;
+    font-weight: 500;
+}
+
+.stat-value {
+    font-size: 0.95rem;
+    color: #1F2937;
+    font-weight: 700;
+}
+
+/* Closed Campaign Action Buttons */
+.btn-view-closed {
+    background: #707AF2;
+    color: white;
+}
+
+.btn-view-closed:hover {
+    background: #5a67d8;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(112, 122, 242, 0.4);
+}
+
+.btn-transparency-closed {
+    background: #8B5CF6;
+    color: white;
+}
+
+.btn-transparency-closed:hover {
+    background: #7C3AED;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.4);
+}
+
+/* Transparency Reports Modal */
+.transparency-reports-modal {
+    max-width: 900px;
+}
+
+/* Campaign Summary Section */
+.transparency-summary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 16px;
+    padding: 24px;
+    color: white;
+    margin-bottom: 30px;
+}
+
+.summary-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.summary-header h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.summary-status {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.summary-status.completed {
+    background: rgba(16, 185, 129, 0.2);
+}
+
+.summary-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.summary-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.summary-label {
+    font-size: 0.85rem;
+    opacity: 0.9;
+}
+
+.summary-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+/* Reports Timeline */
+.reports-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.report-card {
+    background: white;
+    border: 2px solid #E5E7EB;
+    border-radius: 16px;
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+.report-card:hover {
+    border-color: #707AF2;
+    box-shadow: 0 4px 12px rgba(112, 122, 242, 0.15);
+}
+
+.report-card.final-report {
+    border-color: #10B981;
+    background: linear-gradient(to bottom, #ECFDF5 0%, white 100%);
+}
+
+.report-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.report-date {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #6B7280;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.report-date i {
+    color: #707AF2;
+}
+
+.btn-expand-report {
+    background: #F3F4F6;
+    border: none;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-expand-report:hover {
+    background: #E5E7EB;
+}
+
+.btn-expand-report.active {
+    transform: rotate(180deg);
+    background: #707AF2;
+    color: white;
+}
+
+.final-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #10B981;
+    color: white;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.report-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1F2937;
+    margin-bottom: 8px;
+}
+
+.report-summary {
+    font-size: 0.95rem;
+    color: #6B7280;
+    line-height: 1.6;
+}
+
+/* Report Content (Initially Hidden) */
+.report-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    margin-top: 16px;
+}
+
+.report-content.active {
+    max-height: 2000px;
+}
+
+.report-description {
+    margin-bottom: 20px;
+}
+
+.report-description p {
+    font-size: 0.95rem;
+    color: #374151;
+    line-height: 1.7;
+}
+
+/* Final Stats Grid */
+.final-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin: 20px 0;
+    padding: 20px;
+    background: white;
+    border-radius: 12px;
+    border: 2px solid #10B981;
+}
+
+.final-stat {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.final-stat i {
+    font-size: 2rem;
+    color: #10B981;
+}
+
+.final-stat div {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.final-stat strong {
+    font-size: 1rem;
+    color: #1F2937;
+}
+
+.final-stat span {
+    font-size: 0.85rem;
+    color: #6B7280;
+}
+
+/* Report Images Grid */
+.report-images {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.report-image-item {
+    position: relative;
+    width: 100%;
+    padding-top: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    border: 2px solid #E5E7EB;
+    transition: all 0.3s ease;
+}
+
+.report-image-item:hover {
+    border-color: #707AF2;
+    transform: scale(1.05);
+}
+
+.report-image-item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.report-image-item:hover .image-overlay {
+    opacity: 1;
+}
+
+.image-overlay i {
+    color: white;
+    font-size: 1.5rem;
+}
+
+/* Report Meta */
+.report-meta {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding-top: 16px;
+    border-top: 1px solid #E5E7EB;
+}
+
+.report-receipts {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #707AF2;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.report-receipts i {
+    font-size: 1rem;
+}
+
+/* Thank You Section */
+.thank-you-section {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%);
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 20px;
+}
+
+.thank-you-section i {
+    font-size: 2rem;
+    color: #F59E0B;
+}
+
+.thank-you-section p {
+    font-size: 1rem;
+    color: #78350F;
+    font-weight: 600;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Empty Reports State */
+.empty-reports {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.empty-reports i {
+    font-size: 64px;
+    color: #ccc;
+    margin-bottom: 16px;
+}
+
+.empty-reports p {
+    color: #999;
+    font-size: 1rem;
+}
+
+/* Report Image Modal */
+.report-image-modal {
+    max-width: 900px;
+}
+
+.report-image-container {
+    margin-top: 20px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.report-image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .campaign-closed-stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .summary-stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .final-stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .report-images {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .transparency-reports-modal {
+        max-width: 100%;
+        margin: 10px;
+    }
+    
+    .stat-item i {
+        font-size: 1.2rem;
+    }
+}

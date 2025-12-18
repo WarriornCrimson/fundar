@@ -1,0 +1,176 @@
+@import url('https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css'); /*hand with heart*/
+@import url('https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'); /*dashboard icon*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    position: relative; 
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    background-color: #f8f8f8;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+.hide {
+    display: none !important;
+}
+
+.text-red-500 {
+    color: #ef4444; 
+} 
+
+
+.logged-in-user-profile {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+    right: 0;
+    top: 0;
+    z-index: 20; 
+}
+
+.logged-in-user-profile img {
+    outline: none;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    outline: 3px solid #7A3FFF;
+    cursor: pointer;
+}
+
+.logged-in-user-profile:hover {
+    transform: translateY(-2px);
+}
+
+.logout-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: none;
+    color: #707AF2;
+}
+
+.logout {
+    gap: 10px;
+    width: fit-content;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Improved shadow */
+    background-color: white;
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd; /* Lighter border */
+    border-radius: 9px;
+    cursor: pointer;
+    padding: 10px 15px;
+    position: absolute;
+    top: 65px; 
+    right: 25px;
+    z-index: 30; /* Above the profile icon */
+    font-size: 0.9rem;
+    color: #707AF2;
+    font-weight: 500;
+}
+
+.logout i {
+    color: #707AF2;
+    font-size: 1.1rem;
+}
+
+.logout:hover {
+    background-color: #f1f2f7;
+}
+
+aside {
+    text-align: center;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: white; 
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.05);
+    padding: 14px 9px;
+    z-index: 10;
+}
+
+aside img {
+    width: 95px;
+    margin-bottom: 40px;
+}
+
+aside ul {
+    width: 226px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+aside ul li {
+    border-radius: 13px;
+    padding: 10px 20px;
+    overflow: hidden;
+    transition: background-color 0.2s;
+}
+
+aside ul li:hover {
+    background-color: rgba(76, 88, 223, 0.06);
+}
+
+aside ul li:hover i,
+aside ul li:hover p,
+aside ul li:hover a,
+aside ul li a.active i,
+aside ul li a.active p,
+aside ul li a.active {
+    color: #707AF2;
+}
+
+aside ul li a {
+    display: flex;
+    align-items: center;
+    position: relative;
+    color: #000000;
+    transition: color 0.2s;
+}
+
+aside ul li a:visited {
+    color: #000000; /* Keep consistent */
+}
+
+aside ul li a p {
+    position: absolute;
+    left: 48px;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+aside ul li a i{
+    width: 30px;
+    height: fit-content;
+    padding: 2px;
+    font-size: 24px;
+    text-align: center;
+}
+
+.navbar a.active {
+    color: #707AF2;
+}
+
+li.active-nav {
+    background-color: rgba(76, 88, 223, 0.06);
+}

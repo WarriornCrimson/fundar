@@ -42,9 +42,9 @@ const phoneNum = document.querySelector('#phone');
 
 const donorStep3 = document.querySelector('#step-3-donor');
 const donorBackBtn5 = document.querySelector('.donor-step-5-back-btn');
-const donorReview = document.querySelector('.donor-review-registration');
+const donorReview = document.querySelector('.donor-review-registration'); 
 const donorSubmit = document.querySelector('.donor-next5');
-
+ 
 studentRole.addEventListener('click', () => {
     selectedRole = 'Student';
     step2Flow();
@@ -52,7 +52,7 @@ studentRole.addEventListener('click', () => {
 
 function step2Flow() {
     step1.style.display = 'none';
-    step2.style.display = 'block';
+    step2.style.display = 'block'; 
     controls.style.display = 'flex';
     progressBar.style.width = '50%';
 }
@@ -145,6 +145,7 @@ function step2NextBtn() {
       shortPass.style.position = 'absolute';
       shortPass.style.width = '80%';
       shortPass.style.textAlign = 'right';
+      shortPass.style.right = '90px';
       shortPass.textContent = "Go for 12 characters or more.";
       pass.after(shortPass);
       pass.focus();
@@ -165,6 +166,7 @@ function step2NextBtn() {
       mismatch.style.position = 'absolute';
       mismatch.style.width = '80%';
       mismatch.style.textAlign = 'right';
+      mismatch.style.right = '90px';
       mismatch.textContent = "Passwords don't match!";
       cpass.after(mismatch);
       cpass.focus();

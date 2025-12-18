@@ -1,5 +1,10 @@
 {{-- Small Campaign Card Component --}}
 <div class="campaign-card-sm">
+
+    <button class="small-campaign-save bookmark-btn {{ request()->routeIs('saved') ? 'shown' : 'hidden'}}">
+        <i class="fa-solid fa-bookmark"></i>
+    </button>
+
     <div class="campaign-card-sm-header">
         <div class="campaign-card-sm-avatar">
             <img src="{{ $userAvatar ?? asset('images/StudentCharacter.png') }}" alt="{{ $userName }}">
@@ -35,3 +40,4 @@
         <a href="{{ route('campaign.details',  $campaignId) }}" class="campaign-card-sm-btn">Visit Campaign</a>
     </div>
 </div>
+<script src="{{ asset('js/savedcampaigns.js') }}"></script>

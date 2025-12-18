@@ -6,24 +6,38 @@
     <title>Dashboard | FUNDar</title>
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/pages/home.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/campaign.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/pages/donation.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/campaign.css') }}"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
 </head>
-<body>
-    <x-side-bar/>
+<body> 
+    <x-side-bar/> 
+ 
+    <script>
+        window.logoutRedirect = "{{ route('landing') }}";
+    </script>
+
+    <div class="modal-overlay">
+        <div class="modal-container confirm-modal">
+            <h2 class="modal-title">Are you sure you want to logout?</h2>
+            <div class="modal-footer">
+                <button class="btn-cancel" id="cancelLogout">Cancel</button>
+                <button class="btn-confirm" id="confirmLogout">Confirm</button>
+            </div>
+        </div>
+    </div>
     
     <div class="main-content">
         <div class="warm-greeting">
             <h1 class="user-greeting">Hey <span class="large-name">Andrea</span>! FUNDar's been waiting for you.</h1>
             <hr class="greeting-hr">
-        </div>
+        </div> 
 
         <div class="logged-in-user-profile">
             <img src="{{ asset('images/Andrea.png') }}">
         </div>
-        <div class="logout hide"><i class="fi fi-rr-user-logout"></i><p>Log out</p></div>
- 
+        
+        <div class="logout hide"><button class="logout-text"><i class="fi fi-rr-user-logout"></i> Log out</button></div>
+
         <x-campaign-card 
         userName="Allyssa"
         userYear="3rd Year"
@@ -33,7 +47,7 @@
         campaignTitle="Code for a Cause"
         campaignDescription="Hi! I'm Allyssa, a tech student with a big dream — to build applications that solve real-world problems. As we begin our capstone project, I want to give my all, but I currently don't have a laptop powerful enough to handle development tools."
         :raisedAmount="10000"
-        :goalAmount="20000"
+        :goalAmount="20000" 
         :fundedPercentage="50" 
         campaignId="1"
         badge="Learning Material"
@@ -303,5 +317,8 @@
 
     <script src="{{ asset('js/campaigncard.js') }}"></script>
     <script src="{{ asset('js/dashboard.js') }}"></script>
+    <script src="{{ asset('js/notifications.js') }}"></script>
+    <script src="{{ asset('js/modals.js') }}"></script>
+
 </body>
 </html>

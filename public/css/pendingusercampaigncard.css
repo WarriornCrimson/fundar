@@ -1,0 +1,424 @@
+.campaign-card-sm {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    max-width: 640px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    margin: 0 10px;
+    position: relative;
+}
+
+.campaign-card-sm.hide {
+    display: none;
+} 
+
+.campaign-card-sm:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.campaign-card-sm-header {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.campaign-card-sm-avatar {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 2px;
+    justify-content: center;
+}
+
+.campaign-card-sm-avatar img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    outline: 2px solid #7A3FFF;
+}
+
+.campaign-card-sm-avatar i {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #E5E7EB;
+    height: fit-content;
+    position: absolute;
+    color: #7A3FFF;
+    left: 0;
+    bottom: 0;
+}
+
+.campaign-badge-detail {
+    position: static;
+        width: 160px;
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    background: #60A5FA;
+    color: white;
+    padding: 3px 12px;
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: 400;
+    text-shadow: 1px 1px 6px rgba(0,0,0,0.3);
+    text-align: center;
+}
+
+
+.campaign-card-sm-user-info {
+    flex: 1;
+}
+
+.campaign-card-sm-user-name {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 400;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.9),
+                -1px -1px 3px rgba(0,0,0,0.7);
+    color: #ffffff;
+}
+
+.campaign-card-sm-user-meta {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 300;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.9),
+                -1px -1px 3px rgba(0,0,0,0.7);  
+    color: #ffffff;
+}
+
+.campaign-card-sm-badge { 
+    background: #707AF2;
+    color: white;
+    padding: 6px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.campaign-card-sm-image {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+}
+
+.campaign-card-sm-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.badge-funded-percent {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.campaign-card-sm-progress-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0; 
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+    padding: 16px;
+}
+
+.campaign-card-sm-raised {
+    text-align: left;
+    margin: 0 0 8px 0;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.9),
+                -1px -1px 3px rgba(0,0,0,0.7);  
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.campaign-card-sm-progress-bar {
+    width: 100%;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.campaign-card-sm-progress-fill {
+    height: 100%;
+    width: var(--percentWidth);
+    background: #04F468;
+    border-radius: 10px;
+    transition: width 0.3s ease;
+}
+
+.campaign-card-sm-content {
+    padding: 15px;
+}
+
+.campaign-card-sm-pending {
+    text-align: center;
+    background: #ff3f3f41;
+    width: 105px;
+    color: #ff3f3f;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 300;
+    border: 1px solid #ee4a29;
+} 
+
+.campaign-card-sm-title {
+    text-align: left;
+    padding: 10px 0;
+    font-size: 25px;
+    font-weight: 600;
+    color: #000000BF;
+}
+
+.campaign-card-sm-description {
+    margin: 0 0 16px 0;
+    font-size: 16px;
+    font-weight: 300;
+    color: #000000BF;
+    line-height: 1.6;
+}
+
+.campaign-card-sm-btn {
+    display: inline-block;
+    background: #707AF2;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+
+.campaign-card-sm-btn:hover {
+    background: #5A63D8;
+}
+
+.badge-funded-percent .campaign-badge-detail {
+    position: static;
+    padding: 5px 0;
+}
+
+.bookmark-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1;
+}
+
+.bookmark-btn.hidden {
+    display: none;
+}
+
+.bookmark-btn.shown {
+    display: block;
+}
+
+* Pending Campaign Specific Styles */
+.btn-disabled {
+    background: #9CA3AF;
+    color: white;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.btn-disabled:hover {
+    background: #9CA3AF;
+    transform: none;
+    box-shadow: none;
+}
+
+.btn-edit-pending {
+    background: #3B82F6;
+    color: white;
+}
+
+.btn-edit-pending:hover {
+    background: #2563EB;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+}
+
+.btn-cancel-pending {
+    background: #EF4444;
+    color: white;
+}
+
+.btn-cancel-pending:hover {
+    background: #DC2626;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4);
+}
+
+/* Edit Campaign Modal */
+.edit-campaign-modal {
+    max-width: 700px;
+}
+
+.edit-image-container {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    border: 2px solid #e0e0e0;
+    transition: all 0.3s ease;
+}
+
+.edit-image-container:hover {
+    border-color: #707AF2;
+}
+
+.edit-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.edit-image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    color: white;
+}
+
+.edit-image-container:hover .edit-image-overlay {
+    opacity: 1;
+}
+
+.edit-image-overlay i {
+    font-size: 40px;
+}
+
+.edit-image-overlay span {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.form-select {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-family: inherit;
+    background: white;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+
+.form-select:focus {
+    outline: none;
+    border-color: #707AF2;
+}
+
+.form-hint {
+    display: block;
+    font-size: 0.85rem;
+    color: #666;
+    margin-top: 6px;
+}
+
+.required {
+    color: #EF4444;
+}
+
+.error-message {
+    display: block;
+    margin-top: 6px;
+}
+
+/* Input Validation States */
+input.invalid,
+textarea.invalid,
+select.invalid {
+    border-color: #EF4444;
+    background-color: #FEE2E2;
+}
+
+input.valid,
+textarea.valid,
+select.valid {
+    border-color: #10B981;
+}
+
+/* Character Counter Styling */
+.char-counter {
+    display: block;
+    text-align: right;
+    font-size: 0.85rem;
+    color: #999;
+    margin-top: 6px;
+}
+
+.char-counter.warning {
+    color: #F59E0B;
+    font-weight: 600;
+}
+
+.char-counter.limit {
+    color: #EF4444;
+    font-weight: 600;
+}
+
+/* Success Message Styling */
+.success-message-box {
+    background: #D1FAE5;
+    border: 2px solid #10B981;
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 20px 0;
+}
+
+.success-message-box i {
+    color: #059669;
+    font-size: 24px;
+}
+
+.success-message-box p {
+    color: #065F46;
+    font-weight: 500;
+    margin: 0;
+}
+
+/* Responsive Design for Edit Modal */
+@media (max-width: 768px) {
+    .edit-campaign-modal {
+        max-width: 100%;
+        margin: 10px;
+    }
+    
+    .edit-image-container {
+        height: 200px;
+    }
+}

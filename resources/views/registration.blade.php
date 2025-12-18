@@ -57,8 +57,8 @@
                                 <img src="{{ asset('images/DonorCharacter.png') }}">
                                 <h1>Donor</h1>
                             </div>
-                        </div>
-                    </section>
+                        </div>  
+                    </section> 
 
                     <!--Student Flow-->
                     <section id="step-2">
@@ -88,7 +88,7 @@
                                 <label for="c-password">Confirm Password<span class="required">*</span></label>
                                 <input type="password" id="cpassword" name="cpassword" required>
                             </div>
-                            </form>   
+                            </form>    
                         </div>
 
                         <div class="section-btns">

@@ -1,0 +1,368 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+/* --- Root Variables --- */
+:root {
+    --official-outline: rgba(112, 122, 242, 0.4);
+    --official-radius: 22px;
+    --box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
+    --primary-color: #4C58DF; /* Main Purple/Blue */
+    --secondary-color: #707AF2; /* Lighter Purple/Blue */
+    --funded-color: #27ae60; /* Green for 100% funded */
+    --cancel-color: #FF5959; /* Red for cancel/delete */
+    --text-color: #333;
+    --background-color: #f8f9fa;
+    --sidebar-width: 250px; /* Kept for main-content-wrapper calculation */
+}
+
+/* --- Global Resets --- */
+html {
+    scroll-behavior: smooth;
+}
+
+*{
+    font-family: "Inter", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+body {
+    background-color: var(--background-color);
+    display: flex; /* Setup for sidebar and main content */
+    min-height: 100vh;
+}
+
+.main-content-wrapper {
+    margin-left: var(--sidebar-width);
+    width: 1300px;
+}
+
+/* --- Shared Element Styles --- */
+button, a {
+    border: none;
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button:focus {
+    outline: none;
+}
+
+/* --- Utility Buttons --- */
+.btn-primary {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    border-radius: 6px;
+    padding: 12px 20px;
+    font-weight: 600;
+    font-size: 16px;
+    transition: background-color 0.2s;
+}
+
+.btn-primary:hover {
+    background-color: #4c58dfc6;
+}
+
+.btn-cancel {
+    background-color: var(--cancel-color);
+    color: #ffffff;
+    border-radius: 6px;
+    padding: 12px 20px;
+    font-weight: 600;
+    font-size: 16px;
+    transition: background-color 0.2s;
+}
+
+.btn-cancel:hover {
+    background-color: #ff5959c4;
+}
+
+
+.campaign-listings-container {
+    padding: 30px 40px;
+    width: 100%;
+}
+
+/* --- Top Filter Row --- */
+.filter-controls-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.campaign-tabs {
+    width: calc(100% - 243px);
+    display: flex;
+    justify-self: right;
+    gap: 10px;
+}
+
+.tab-button {
+    padding: 8px 18px;
+    border: none;
+    border-radius: 6px;
+    background-color: var(--secondary-color);
+    color: #ffffff;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.tab-button.active {
+    background-color: var(--primary-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.tab-button:not(.active) {
+    background-color: #f0f0f0;
+    color: #555;
+    font-weight: 500;
+    border: 1px solid #ddd;
+}
+
+.dropdown-filter .dropdown-button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #ffffff;
+    color: #555;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.dropdown-filter .fa-chevron-down {
+    font-size: 0.7rem;
+}
+
+.search-bar-row {
+    margin-bottom: 30px;
+}
+
+.search-input-wrapper {
+    width: 450px;
+    display: flex;
+    align-items: center;
+    padding: 8px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #ffffff;
+}
+
+.search-input-wrapper i {
+    color: #aaa;
+    margin-right: 10px;
+}
+
+.search-input-wrapper input {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 1rem;
+}
+
+/* --- Campaigns Grid --- */
+.campaign-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 20px;
+}
+
+.campaign-card {
+    background-color: #ffffff;
+    border-radius: var(--official-radius);
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.campaign-card.hidden {
+    display: none;
+}
+
+.campaign-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Campaign Header (Image Area) */
+.campaign-header {
+    height: 180px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.campaign-header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(144, 114, 255, 0.7); /* Purple overlay */
+    z-index: 1;
+}
+
+.status-tag {
+    align-self: flex-start;
+    padding: 4px 12px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #ffffff;
+    z-index: 2;
+}
+
+.status-tag.live {
+    background-color: var(--secondary-color);
+}
+.status-tag.pending {
+    background-color: #f39c12; /* Warning orange */
+}
+
+
+.campaign-title-overlay {
+    z-index: 2;
+    color: #ffffff;
+}
+
+.campaign-title-overlay h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.campaign-title-overlay .byline {
+    font-size: 1rem;
+    font-weight: 400;
+    margin-top: 5px;
+}
+
+/* Campaign Body (Below Image) */
+.campaign-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.profile-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+}
+
+.profile-pic-small {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.student-info p {
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.learning-material-tag {
+    margin-left: auto;
+    background-color: #e0f0ff;
+    color: var(--primary-color);
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+/* Funding Progress */
+.funding-progress-row {
+    display: flex;
+    flex-direction: column;
+}
+
+.funding-text {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-color);
+    margin-bottom: 5px;
+}
+
+.progress-bar-bg {
+    background-color: #eee;
+    border-radius: 5px;
+    height: 10px;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 5px;
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: var(--secondary-color);
+    border-radius: 5px;
+    transition: width 0.4s ease-in-out;
+}
+
+.progress-bar.funded {
+    background-color: var(--funded-color);
+}
+
+.funded-percentage {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #555;
+    align-self: flex-end;
+}
+
+/* Action Buttons */
+.action-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.btn-view, .btn-delete {
+    flex-grow: 1;
+    padding: 12px;
+    font-size: 1rem;
+}
+
+.btn-trash {
+    background-color: #f0f0f0;
+    color: var(--cancel-color);
+    width: 50px;
+    padding: 0;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+}
+
+.btn-trash:hover {
+    background-color: #e0e0e0;
+}
+
+.campaigns-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+}

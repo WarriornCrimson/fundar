@@ -1,0 +1,202 @@
+/* --- BASE STYLES & VARIABLES (from original) --- */
+:root {
+    --primary-color: #4C58DF;
+    --secondary-color: #707AF2;
+    --positive-color: #27ae60;
+    --official-radius: 22px;
+    --box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Ensure Inter font is available, though it should be loaded in the Blade file */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f4f6f9; /* Matches the light background in the image */
+    padding: 20px;
+    display: flex;
+    position: relative;
+}
+
+.admin-accounts {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: calc(100% - 250px);
+    padding: 20px;
+
+}
+
+.verification-dashboard-container {
+    width: 100%;
+}
+
+.stats-grid-verification {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.stat-card-verification {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 12px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); 
+    border: 1px solid #f0f0f0;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.stat-card-verification .stat-label {
+    font-size: 1rem;
+    color: #616161;
+    font-weight: 500;
+}
+
+.stat-card-verification .stat-value {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1;
+    margin-top: 5px;
+}
+
+.stat-card-verification .stat-detail {
+    font-size: 0.9rem;
+    color: #9e9e9e;
+}
+
+/* Specific text colors for the values */
+.primary-text { color: var(--primary-color); }
+.secondary-text { color: var(--secondary-color); }
+.positive-text { color: var(--positive-color); }
+
+/* --- 2. SEARCH BAR LIST (Standalone Search) --- */
+.search-bar-list {
+    margin-bottom: 20px;
+}
+
+.search-input-wrapper-list {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    /* Full width up to the max-width of the container, matching the image */
+    width: 500px; 
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.search-input-wrapper-list i {
+    color: #bdbdbd;
+    margin-right: 10px;
+}
+
+.search-input-wrapper-list input {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 1rem;
+}
+
+/* --- 3. DATA TABLE STYLING (Simplified) --- */
+.data-table-wrapper-verification {
+    background-color: #ffffff;
+    border-radius: var(--official-radius);
+    box-shadow: var(--box-shadow);
+    padding: 0; /* Remove padding here, move to td/th */
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+/* Table Header */
+thead th {
+    text-align: left;
+    padding: 20px;
+    color: #757575;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: capitalize; /* Changed from uppercase to match image style */
+    background-color: #fcfcfc; /* Very light background for header */
+}
+
+/* Table Body Rows */
+tbody tr {
+    border-bottom: 1px solid #f0f0f0;
+    transition: background-color 0.2s;
+}
+
+tbody tr:hover {
+    background-color: #f9f9f9;
+}
+
+tbody tr:last-child {
+    border-bottom: none;
+}
+
+tbody td {
+    padding: 20px;
+    color: #333;
+    font-size: 1rem;
+    vertical-align: middle;
+}
+
+/* Document Type Cell */
+td[data-label="Document Type"] {
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+/* Review Button */
+.btn-primary.review-btn-table {
+    background-color: var(--secondary-color); /* Used secondary color for the button */
+    padding: 10px 20px;
+    border-radius: 8px; /* Slightly more rounded */
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.btn-primary.review-btn-table:hover {
+    background-color: #5d67e0; /* Darker secondary color on hover */
+}
+
+/* Ensure the full container gets the rounded corners */
+.data-table-wrapper-verification table {
+    border-radius: var(--official-radius);
+    overflow: hidden; /* Important for containing children's borders */
+}
+
+/* --- Responsive Adjustments (Simplified from original) --- */
+@media screen and (max-width: 1024px) {
+    .admin-accounts {
+        margin-left: 0;
+        padding: 10px;
+        width: 100%;
+    }
+    .stats-grid-verification {
+        grid-template-columns: 1fr;
+    }
+}
+@media screen and (max-width: 768px) {
+    .search-input-wrapper-list {
+        width: 100%;
+    }
+    /* Mobile table styles */
+    thead { display: none; }
+    table, tbody, tr, td { display: block; width: 100%; }
+    tr { margin-bottom: 15px; border: 1px solid #ddd; border-radius: 8px; padding: 10px; }
+    tbody td { text-align: right; padding: 10px 15px; border: none; position: relative; }
+    tbody td::before {
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+        color: #757575;
+    }
+    td[data-label="Actions"] { text-align: center; }
+} 

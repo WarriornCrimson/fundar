@@ -13,7 +13,7 @@
         <!-- Left Section -->
         <div class="left-section">
             <a class="back-btn" href="{{ route('/') }}">
-                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-left"></i> 
             </a>
             
             <div class="welcome-text">
@@ -56,7 +56,7 @@
                         <div class="forgot-password">
                             <a class="forgot-pass-provoke">Forgot Password</a>
                         </div>
-                    </div>
+                    </div> 
                 </form>
 
                 <button class="rounded-btn login">Log in</button>

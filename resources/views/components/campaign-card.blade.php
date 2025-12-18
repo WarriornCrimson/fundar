@@ -6,10 +6,10 @@
         <p>{{ $headerMessage ?? '"Psst... wanna be today\'s hero? 🎯 Every peso gets this student closer to their goal. Peek at the campaign details—you might just save the day!"' }}</p>
     </div>
 
-    <!-- User Info -->
-    <div class="user-info">
+    <!-- User Info --> 
+    <div class="user-info ">
         <div class="verified-profile">
-            <img src="{{ $userAvatar ?? asset('images/StudentCharacter.png') }}" alt="{{ $userName }}" class="user-avatar">
+            <img src="{{ $userAvatar ?? asset('images/StudentCharacter.png') }}" alt="{{ $userName }}" class="user-avatar" title="View Profile">
             <i class="fi fi-ss-check-circle"></i>
         </div> 
         <div class="user-details">
@@ -139,7 +139,7 @@
                                 <div class="placeholder-icon">
                                     <div></div>
                                     <div></div>
-                                </div>
+                                </div> 
                             </div>
                             <img class="image-preview" alt="Preview">
                         </div>
@@ -152,7 +152,7 @@
                 <div class="btn-primary proceed disabled">Done</div>
             </div> 
          </div>
-
+ 
          <div class="donation confirmation-popup hide">
             <i class="fa-solid fa-circle-check fa-2xl" style="color: #707af2; font-size:80px; padding: 2px;"></i>
             <h1>Donation Successful</h1> 

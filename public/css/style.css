@@ -4,6 +4,13 @@
 @import url('https://cdn-uicons.flaticon.com/3.0.0/uicons-bold-rounded/css/uicons-bold-rounded.css'); /*Check Mark*/
 @import url('https://cdn-uicons.flaticon.com/3.0.0/uicons-bold-rounded/css/uicons-bold-rounded.css'); /*Remove Mark*/
 @import url('https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'); /*Logout*/
+@import url('https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'); /*Refine*/
+
+:root {
+    --official-outline: rgba(112, 122, 242, 0.4);
+    --official-radius: 22px;
+    --box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
+}
 
 html {
     scroll-behavior: smooth;
@@ -135,7 +142,7 @@ a {
 
 .btn-secondary.disabled {
     background-color: #4c58dfab;
-    color: #ffffff;    
+    color: #ffffff;     
 }
 
 .large-checkmark {
@@ -149,3 +156,911 @@ a {
     justify-content: center;
 }
 
+.section-title {
+    color: #707AF2;
+    font-size: 31px;
+    font-weight: 600;
+}
+ 
+hr {
+    border: none;
+    border-top: 2px solid var(--official-outline);
+    margin: 15px 0;
+}
+
+.with-refine {
+    position: relative;
+}
+
+.refine-btn {
+    background-color: #4C58DF;
+    border-radius: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    padding: 4.3px 12px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #ffffff;
+    transition: all 0.3s ease-in;
+    position: absolute;
+    right: 10px;
+    top: 13px;
+
+}
+
+.refine-btn:hover {
+    background-color: #5965e2;
+    transform: translateY(-2px);
+}
+
+/* Modal Overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+.modal-overlay.active {
+    display: flex;
+}
+
+.modal-container {
+    padding: 30px;
+    background: white; 
+    border-radius: 16px;
+    max-width: 600px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.confirm-modal {
+    max-width: 450px;
+}
+
+.modal-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1a1a1a; 
+    margin-bottom: 8px;
+}
+
+.modal-subtitle {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 25px;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+.btn-confirm {
+    padding: 12px 24px;
+    border-radius: 8px;
+    border: none;
+    background: #707AF2;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-confirm:hover {
+    background-color: #9198dfc6;
+}
+
+
+/*UserCampaignCard*/
+/* Small Campaign Card Component Styles */
+
+.campaign-card-sm {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    max-width: 640px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    margin: 0 10px;
+    position: relative;
+}
+
+.campaign-card-sm.hide {
+    display: none;
+} 
+
+.campaign-card-sm:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.campaign-card-sm-header {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.campaign-card-sm-avatar {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 2px;
+    justify-content: center;
+}
+
+.campaign-card-sm-avatar img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    outline: 2px solid #7A3FFF;
+}
+
+.campaign-card-sm-avatar i {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #E5E7EB;
+    height: fit-content;
+    position: absolute;
+    color: #7A3FFF;
+    left: 0;
+    bottom: 0;
+}
+
+.campaign-badge-detail {
+    position: static;
+        width: 160px;
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    background: #60A5FA;
+    color: white;
+    padding: 3px 12px;
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: 400;
+    text-shadow: 1px 1px 6px rgba(0,0,0,0.3);
+    text-align: center;
+}
+
+
+.campaign-card-sm-user-info {
+    flex: 1;
+}
+
+.campaign-card-sm-user-name {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 400;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.9),
+                -1px -1px 3px rgba(0,0,0,0.7);
+    color: #ffffff;
+}
+
+.campaign-card-sm-user-meta {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 300;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.9),
+                -1px -1px 3px rgba(0,0,0,0.7);  
+    color: #ffffff;
+}
+
+.campaign-card-sm-badge { 
+    background: #707AF2;
+    color: white;
+    padding: 6px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.campaign-card-sm-image {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+}
+
+.campaign-card-sm-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.badge-funded-percent {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.campaign-card-sm-progress-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0; 
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+    padding: 16px;
+}
+
+.campaign-card-sm-raised {
+    text-align: left;
+    margin: 0 0 8px 0;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.9),
+                -1px -1px 3px rgba(0,0,0,0.7);  
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.campaign-card-sm-progress-bar {
+    width: 100%;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.campaign-card-sm-progress-fill {
+    height: 100%;
+    width: var(--percentWidth);
+    background: #04F468;
+    border-radius: 10px;
+    transition: width 0.3s ease;
+}
+
+.campaign-card-sm-content {
+    padding: 15px;
+}
+
+.campaign-card-sm-funded {
+    background: #7A3FFF14;
+    color: #7A3FFF;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 300;
+    border: 1px solid #7A3FFF;
+} 
+
+.campaign-card-sm-title {
+    text-align: left;
+    padding: 10px 0;
+    font-size: 25px;
+    font-weight: 600;
+    color: #000000BF;
+}
+
+.campaign-card-sm-description {
+    margin: 0 0 16px 0;
+    font-size: 16px;
+    font-weight: 300;
+    color: #000000BF;
+    line-height: 1.6;
+}
+
+.campaign-card-sm-btn {
+    display: inline-block;
+    background: #707AF2;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+
+.campaign-card-sm-btn:hover {
+    background: #5A63D8;
+}
+
+.badge-funded-percent .campaign-badge-detail {
+    position: static;
+    padding: 5px 0;
+}
+
+/* .bookmark-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1;
+}
+
+.bookmark-btn.hidden {
+    display: none;
+}
+
+.bookmark-btn.shown {
+    display: block;
+} */
+
+.contains-campaigns {
+    grid-template-columns: 1fr 1fr;
+}
+
+.campaign-card-sm-btn.disabled {
+    background-color: #8a91e0df;
+}
+
+/* Campaign Action Buttons */
+.campaign-actions {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.campaign-action-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 16px;
+    border-radius: 8px;
+    border: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.campaign-action-btn i {
+    font-size: 1rem;
+}
+
+.btn-visit {
+    background: #707AF2;
+    color: white;
+}
+
+.btn-visit:hover {
+    background: #5a67d8;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(112, 122, 242, 0.4);
+}
+
+.btn-requests {
+    background: #10B981;
+    color: white;
+}
+
+.btn-requests:hover {
+    background: #059669;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+}
+
+.btn-transparency {
+    background: #F59E0B;
+    color: white;
+}
+
+.btn-transparency:hover {
+    background: #D97706;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4);
+}
+
+.btn-close {
+    background: #EF4444;
+    color: white;
+}
+
+.btn-close:hover {
+    background: #DC2626;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4);
+}
+
+/* Modal Header with Close Button */
+.modal-header-with-close {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.modal-close-btn {
+    background: rgba(0, 0, 0, 0.1);
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: #666;
+    transition: all 0.3s ease;
+}
+
+.modal-close-btn:hover {
+    background: rgba(0, 0, 0, 0.2);
+    color: #333;
+}
+
+/* Donation Requests Modal */
+.donation-requests-modal {
+    max-width: 1200px;
+}
+
+.requests-filter {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.search-box {
+    flex: 1;
+    position: relative;
+}
+
+.search-box i {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 10px 12px 10px 40px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 0.95rem;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: #707AF2;
+}
+
+.filter-select {
+    padding: 10px 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    background: white;
+}
+
+.filter-select:focus {
+    outline: none;
+    border-color: #707AF2;
+}
+
+/* Requests Table */
+.requests-table-container {
+    max-height: 500px;
+    overflow-y: auto;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+}
+
+.requests-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.requests-table thead {
+    background: #f8f9fa;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.requests-table th {
+    padding: 14px 12px;
+    text-align: left;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #555;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.requests-table td {
+    padding: 14px 12px;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 0.9rem;
+}
+
+.requests-table tbody tr:hover {
+    background: #f8f9fa;
+}
+
+.donor-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.donor-info img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.donor-name {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 2px;
+}
+
+.donor-email {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.amount {
+    font-weight: 700;
+    color: #10B981;
+    font-size: 1rem;
+}
+
+.mode-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.mode-badge.gcash {
+    background: #007DFF1A;
+    color: #007DFF;
+}
+
+.mode-badge.bank {
+    background: #10B9811A;
+    color: #10B981;
+}
+
+.mode-badge.paymaya {
+    background: #00D6321A;
+    color: #00D632;
+}
+
+.btn-view-receipt {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    background: #707AF2;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-view-receipt:hover {
+    background: #5a67d8;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.status-badge.pending {
+    background: #FEF3C7;
+    color: #D97706;
+}
+
+.status-badge.approved {
+    background: #D1FAE5;
+    color: #059669;
+}
+
+.status-badge.rejected {
+    background: #FEE2E2;
+    color: #DC2626;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.btn-action {
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 0.9rem;
+}
+
+.btn-accept {
+    background: #D1FAE5;
+    color: #059669;
+}
+
+.btn-accept:hover {
+    background: #10B981;
+    color: white;
+    transform: scale(1.1);
+}
+
+.btn-reject {
+    background: #FEE2E2;
+    color: #DC2626;
+}
+
+.btn-reject:hover {
+    background: #EF4444;
+    color: white;
+    transform: scale(1.1);
+}
+
+.action-done {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #059669;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.empty-requests {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.empty-requests i {
+    font-size: 64px;
+    color: #ccc;
+    margin-bottom: 16px;
+}
+
+.empty-requests p {
+    color: #999;
+    font-size: 1rem;
+}
+
+/* Receipt Modal */
+.receipt-modal {
+    max-width: 700px;
+}
+
+.receipt-image-container {
+    margin-top: 20px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #e0e0e0;
+}
+
+.receipt-image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Transparency Modal */
+.transparency-modal {
+    max-width: 650px;
+}
+
+.photo-upload-section {
+    margin-bottom: 20px;
+}
+
+.btn-upload-photo {
+    width: 100%;
+    padding: 12px 20px;
+    border-radius: 8px;
+    border: 2px dashed #707AF2;
+    background: white;
+    color: #707AF2;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    margin-bottom: 15px;
+}
+
+.btn-upload-photo:hover {
+    background: #f5f7ff;
+}
+
+.photo-preview-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.photo-preview-item {
+    position: relative;
+    width: 100%;
+    padding-top: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 2px solid #e0e0e0;
+}
+
+.photo-preview-item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.btn-remove-photo {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+}
+
+.btn-remove-photo:hover {
+    background: #EF4444;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-family: inherit;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #707AF2;
+}
+
+.char-counter {
+    display: block;
+    text-align: right;
+    font-size: 0.85rem;
+    color: #999;
+    margin-top: 6px;
+}
+
+/* Close Campaign Modal */
+.modal-icon-warning {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #FEF3C7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+}
+
+.modal-icon-warning i {
+    font-size: 40px;
+    color: #F59E0B;
+}
+
+.btn-delete {
+    padding: 12px 24px;
+    border-radius: 8px;
+    border: none;
+    background: #EF4444;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-delete:hover {
+    background: #DC2626;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .campaign-actions {
+        grid-template-columns: 1fr;
+    }
+
+    .donation-requests-modal {
+        max-width: 100%;
+        margin: 10px;
+    }
+
+    .requests-filter {
+        flex-direction: column;
+    }
+
+    .requests-table-container {
+        overflow-x: auto;
+    }
+
+    .requests-table {
+        min-width: 900px;
+    }
+
+    .photo-preview-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

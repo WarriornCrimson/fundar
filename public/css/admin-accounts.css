@@ -1,0 +1,225 @@
+/* --- BASE STYLES & VARIABLES --- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root {
+    --primary-color: #4C58DF;
+    --secondary-color: #707AF2;
+    --official-radius: 22px;
+    --box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
+
+    /* Role/Status Colors (Matching the image) */
+    --role-student-bg: #ffe4c4; /* Light Orange/Yellow */
+    --role-student-text: #a0522d;
+    --role-donor-bg: #98fb98; /* Light Green */
+    --role-donor-text: #006400;
+    --role-admin-bg: #add8e6; /* Light Blue */
+    --role-admin-text: #000080;
+
+    --status-active-bg: #8293f7; /* Light Blue-Violet */
+    --status-active-text: #ffffff;
+    --status-unverified-bg: #ffc2c2; /* Light Red */
+    --status-unverified-text: #ff0000;
+    --status-pending-bg: #ffeb99; /* Light Yellow */
+    --status-pending-text: #8b4513;
+
+    --verified-icon-color: #2ecc71; /* Green for check */
+    --unverified-icon-color: #e74c3c; /* Red for cross */
+}
+
+* {
+    font-family: "Inter", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+body {
+    background-color: #f8f9fa; /* Light background */
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.admin-accounts {
+    margin-left: 250px;
+    width: calc(100% - 250px);
+    min-height: 100vh;
+}
+
+.user-management-container {
+    width: 1200px;
+}
+
+/* --- Tab Navigation Filters --- */
+.user-tabs { 
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.tab-button {
+    padding: 8px 18px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: #fff;
+    color: #555;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.tab-button.active {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    border-color: var(--primary-color);
+}
+
+/* --- Search and Filter Bar --- */
+.filter-bar {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.search-input-wrapper {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    padding: 8px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #ffffff;
+}
+
+.search-input-wrapper i {
+    color: #aaa;
+    margin-right: 10px;
+}
+
+.search-input-wrapper input {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 1rem;
+}
+
+.dropdown-filter .dropdown-button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #ffffff;
+    color: #555;
+    font-weight: 500;
+}
+
+.dropdown-filter .fa-chevron-down {
+    font-size: 0.7rem;
+}
+
+/* --- Data Table Styling --- */
+.data-table-wrapper {
+    background-color: #ffffff;
+    border-radius: var(--official-radius);
+    box-shadow: var(--box-shadow);
+    padding: 10px 0;
+    overflow-x: auto; /* For responsiveness on small screens */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* Table Header */
+thead th {
+    text-align: left;
+    padding: 15px 20px;
+    color: #888;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border-bottom: 1px solid #eee;
+}
+
+/* Table Body Rows */
+tbody tr {
+    border-bottom: 1px solid #f0f0f0;
+    transition: background-color 0.1s;
+}
+
+tbody tr:last-child {
+    border-bottom: none;
+}
+
+tbody td {
+    padding: 15px 20px;
+    color: #333;
+    font-size: 1rem;
+}
+
+/* --- Tags and Icons --- */
+.role-tag {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 5px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.role-tag.student {
+    background-color: var(--status-pending-bg);
+    color: #8b4513;
+}
+
+.role-tag.donor {
+    background-color: var(--role-donor-bg);
+    color: var(--role-donor-text);
+}
+
+.role-tag.admin {
+    background-color: var(--role-admin-bg);
+    color: var(--role-admin-text);
+}
+
+.status-tag {
+    display: inline-block;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #ffffff;
+    text-align: center;
+}
+
+.status-tag.active {
+    background-color: var(--status-active-bg);
+}
+
+.status-tag.unverified {
+    background-color: var(--status-unverified-bg);
+    color: var(--negative-color);
+}
+
+.status-tag.pending {
+    background-color: var(--status-pending-bg);
+    color: var(--status-pending-text);
+}
+
+/* Verified Column Icons */
+.verified-icon.active {
+    color: var(--verified-icon-color);
+    font-size: 1.1rem;
+}
+
+.verified-icon.unverified, .verified-icon.pending {
+    color: var(--unverified-icon-color);
+    font-size: 1.1rem;
+}
+
+.action-icon {
+    cursor: pointer;
+    color: #999;
+}

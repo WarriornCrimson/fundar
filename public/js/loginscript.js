@@ -8,16 +8,17 @@ const usernameInput = document.getElementById('username');
 const passwordInput = document.getElementById('password');
 const loginBtn = document.querySelector('.login');
 
-// Create error message element
+// Create general login error message
 const loginError = document.createElement('p');
 loginError.className = 'login-error-text';
 loginError.style.display = 'none';
-loginError.style.position = 'absolute';
 loginError.style.color = '#EF4444';
 loginError.style.fontSize = '16px';
 loginError.style.textAlign = 'center';
-loginError.style.top = '62%';
-loginError.style.left = '50px';
+loginError.style.width = '100%';
+loginError.style.position = 'absolute';
+loginError.style.top = '58%';
+loginError.style.marginBottom = '15px';
 
 // Insert error message before login button
 loginBtn.parentElement.insertBefore(loginError, loginBtn);
@@ -32,17 +33,23 @@ loginBtn.addEventListener('click', (e) => {
     // Hide previous error
     loginError.style.display = 'none';
     
-    // Validate credentials
+    // Validate username
     if (username === '') {
+        loginError.textContent = 'Please enter your username.';
+        loginError.style.display = 'block';
         usernameInput.focus();
         return;
     }
 
+    // Validate password
     if (password === '') {
+        loginError.textContent = 'Please enter your password.';
+        loginError.style.display = 'block';
         passwordInput.focus();
         return;
     }
 
+    // Check credentials
     if (username === VALID_USERNAME && password === VALID_PASSWORD) {
         // Success
         loginBtn.textContent = 'Logging in';
@@ -51,13 +58,25 @@ loginBtn.addEventListener('click', (e) => {
         loginBtn.style.textAlign = 'center';
         
         setTimeout(() => {
-            window.location = "/home"; // Change to your page
+            window.location = "/home";
         }, 2000);
-    } else {
+    } 
+    else if (username == 'admin' && password == 'itsmehi') {
+        loginBtn.textContent = 'Logging in';
+        loginBtn.disabled = true;
+        loginBtn.style.opacity = '0.7';
+        loginBtn.style.textAlign = 'center';
+        
+        setTimeout(() => {
+            window.location = "/admin/dashboard";
+        }, 2000);
+    }
+    else {
         // Failed login
         loginError.textContent = 'Incorrect username or password. Please try again.';
         loginError.style.display = 'block';
         passwordInput.value = '';
+        return;
     }
 });
 
@@ -141,7 +160,7 @@ forgotPassBtn2.addEventListener('click', (e) => {
 
     setTimeout(() => {
         loadingSpinner.style.display = "none";
-        popupForm2.style.display = 'none';
+        popupForm2.style.display = 'none'; 
         confirmationPopup.style.display = 'flex';
     }, 3000);
 });
@@ -154,10 +173,8 @@ popup.addEventListener('click', (e) => {
     }
 });
 
-
-//Continue with google
+// Continue with google
 const continueGoogle = document.querySelector('.btn-google');
-
 const googleContainer = document.querySelector('.continue-google-popup');
 const googleBox = document.querySelector('.google-form');
 const closeGooglePopup = document.querySelector('.remove-google-popup');
@@ -165,14 +182,13 @@ const continueEmail = document.querySelector('.google-confirm-1');
 
 closeGooglePopup.addEventListener('click', () => {
     googleContainer.style.display = 'none';
-})
+});
 
 continueGoogle.addEventListener('click', () => {
     googleContainer.style.display = 'flex';
 });
 
 googleContainer.addEventListener('click', (e) => {
-    // e is the click of the button
     if (!googleBox.contains(e.target)) {
         googleContainer.style.display = 'none';
         location.reload();
@@ -182,24 +198,20 @@ googleContainer.addEventListener('click', (e) => {
 const googleEmail = document.querySelector('#googleEmail');
 
 continueEmail.addEventListener('click', () => {
-    if (!googleEmail.checkValidity() || googleEmail.value.trim() === ''){
+    if (!googleEmail.checkValidity() || googleEmail.value.trim() === '') {
         googleEmail.reportValidity();
         return;
     }
 
-        continueEmail.classList.add('loading');
-        continueEmail.disabled = true;
-        continueEmail.style.opacity = '0.7';
-        
-        setTimeout(() => {
-            window.location = '/home'; // Change to your page
-        }, 2000);
+    continueEmail.classList.add('loading');
+    continueEmail.disabled = true;
+    continueEmail.style.opacity = '0.7';
+    
+    setTimeout(() => {
+        window.location = '/home';
+    }, 2000);
 
-        setTimeout(() => {
-            googleEmail.value = '';
-        }, 2000)
-
-})
-
-
-
+    setTimeout(() => {
+        googleEmail.value = '';
+    }, 2000);
+});

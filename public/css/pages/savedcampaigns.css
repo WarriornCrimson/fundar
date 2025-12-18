@@ -1,0 +1,20 @@
+.saved-campaigns-con {
+    margin-left: 250px;
+    width: calc(100% - 250px);
+    min-height: 100vh;
+    padding: 20px;
+    
+} 
+
+.category-description {
+    margin-top: 6px;
+    color: grey;
+}
+
+.show-saved-campaigns {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    padding: 10px 10px;
+}

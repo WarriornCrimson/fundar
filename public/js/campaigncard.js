@@ -30,7 +30,7 @@ document.querySelectorAll('.campaign-card').forEach((card) => {
             badge.style.background = tf;
             break;
         case 'Research':
-            badge.style.background = rf;
+            badge.style.background = rf; 
             break;
         case 'Emergency Fund':
             badge.style.background = ef;
@@ -329,22 +329,24 @@ document.querySelectorAll('.campaign-card').forEach((card) => {
     });
 
     proceeds[2].addEventListener('click', () => {
-        if (imageHolder) {
-            proceeds[2].classList.add('loading');
-            proceeds[2].classList.add('disabled');
+    if (imageHolder) {
+        proceeds[2].classList.add('loading');
+        proceeds[2].classList.add('disabled');
 
-            setTimeout(() => {
-                donationStep3.classList.add('hide');
-            }, 2000);
+        setTimeout(() => {
+            donationStep3.classList.add('hide');
+        }, 2000);
 
+        setTimeout(() => {
+            donationConfirmation.classList.remove('hide'); // Remove hide class
+            donationConfirmation.style.display = 'flex';
             setTimeout(() => {
-                donationConfirmation.style.display = 'flex';
-                setTimeout(() => {
-                    donationConfirmation.style.display = 'none';
-                    donationContainer.style.display = 'none';
-                }, 2000);
+                donationConfirmation.classList.add('hide'); // Add hide class back
+                donationConfirmation.style.display = 'none';
+                donationContainer.style.display = 'none';
             }, 2000);
-        }
+        }, 2000);
+    }
     });
 
 

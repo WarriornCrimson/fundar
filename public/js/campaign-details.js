@@ -89,6 +89,8 @@ const exMark = '<i class="fi fi-br-x"></i>';
         }
     });
 
+    
+
 const voteNum = document.querySelectorAll('.vote-number');
 
 let currentVoteCount = Number(voteNum[0].textContent);

@@ -1,0 +1,1692 @@
+.campaign-creation-divider {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    background: linear-gradient(135deg, #7C3AED 0%, #4C58DF 100%);
+}
+
+
+/* Campaign Creation Container */ 
+.campaign-creation-container {
+    width: 100vw;
+    padding: 40px 20px;
+    position: absolute;
+
+}
+
+/* Step Content */
+.step-content {
+    display: none;
+    max-width: 720px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 24px;
+    padding: 40px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.step-content.active {
+    display: block;
+}
+
+
+
+.go-to-prev.hide {
+    display: none;
+}
+
+#wallet-type {
+    font-size: 24px;
+    color: #707af2;
+}
+
+/* Back Button */
+.back-btn {
+    position: fixed;
+    top: 40px;
+    left: 40px;
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.back-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.back-btn i {
+    color: white;
+    font-size: 24px;
+}
+
+/* Step Header */
+.step-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.step-indicator {
+    font-size: 14px;
+    color: #4C58DF;
+    font-weight: 600;
+}
+
+.completion-text {
+    font-size: 14px;
+    color: #6B7280;
+}
+
+/* Progress Bar */
+.progress-bar {
+    height: 10px;
+    background: #E5E7EB;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 40px;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(to right, #4C58DF, #7C3AED);
+    border-radius: 10px;
+    transition: width 0.4s ease;
+}
+
+/* Step Body */
+.step-body {
+    padding: 20px 0;
+}
+
+.step-body h1 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+.subtitle {
+    font-size: 16px;
+    color: #6B7280;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* Category Grid - Step 1 */
+.category-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 2px;
+}
+
+.category-card {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border: 2px dashed #D1D5DB;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.category-card:hover {
+    transform: translateY(-2px);
+    background: rgba(76, 88, 223, 0.05);
+    border-color: #4C58DF;
+}
+
+.category-card.selected {
+    border: 2px solid #4C58DF;
+    background: rgba(76, 88, 223, 0.08);
+}
+
+.category-icon {
+    display: flex;
+    gap: 8px;
+    margin-right: 20px;
+    font-size: 32px;
+    color: #111827;
+}
+
+.category-info h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 4px;
+}
+
+.category-info p {
+    font-size: 14px;
+    color: #6B7280;
+    margin: 0;
+}
+
+/* Next Button - Step 1 */
+.btn-next {
+    width: 64px;
+    height: 64px;
+    background: #7A3FFF;
+    color: #FCF9FC;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-self: right;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    margin-top: 20px;
+    margin-right: 5px;
+}
+
+.btn-next:hover {
+    background: #793fffeb;
+    transform: scale(1.05);
+}
+
+.btn-next i {
+    color: white;
+    font-size: 24px;
+}
+
+/* Form Section - Step 2 */
+.form-section {
+    margin-bottom: 40px;
+}
+
+.form-section h1 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 8px;
+    text-align: left;
+}
+
+.form-section .subtitle {
+    text-align: left;
+    margin-bottom: 24px;
+}
+
+.form-group {
+    margin-bottom: 24px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 8px;
+}
+
+.form-group input[type="number"],
+.form-group input[type="date"],
+.form-group input[type="text"],
+.form-group textarea {
+    width: 100%;
+    padding: 16px 20px;
+    border: 2px solid #E5E7EB;
+    border-radius: 12px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+    font-family: inherit;
+}
+
+.form-group input[type="text"] {
+    padding-right: 113px !important;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #4C58DF;
+}
+
+.form-group small {
+    display: block;
+    margin-top: 8px;
+    font-size: 14px;
+    color: #6B7280;
+}
+
+.required {
+    color: #EF4444;
+    margin-left: 2px;
+}
+
+/* Payment Methods - Step 2 */
+.payment-methods {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    padding: 2px 0;
+}
+
+.payment-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 32px 20px;
+    border: 2px solid #E5E7EB;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.payment-card:hover {
+    transform: translateY(-2px);
+    border-color: #4C58DF;
+    background: rgba(76, 88, 223, 0.05);
+}
+
+.payment-card.selected {
+    border: 2px solid #4C58DF;
+    background: rgba(76, 88, 223, 0.08);
+}
+
+.payment-icon {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    color: #4C58DF;
+    margin-bottom: 12px;
+}
+
+.payment-icon img {
+    background-size: cover;
+    width: 200px;
+    height: 30px;
+}
+
+/* Step Actions */
+
+.step-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 40px;
+}
+
+.btn-outline {
+    padding: 14px 32px;
+    background: transparent;
+    border: 2px solid #4C58DF;
+    color: #4C58DF;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 9px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+    background: #4C58DF;
+    color: white;
+}
+
+.btn-primary {
+    padding: 14px 32px;
+    background: #4C58DF;
+    border: 2px solid #4C58DF;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 9px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#step6-submit.loading {
+            position: relative;
+            color: transparent;
+            pointer-events: none;
+}
+
+#step6-submit::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            top: 50%;
+            left: 50%;
+            margin-left: -10px;
+            margin-top: -10px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-top-color: #fff;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+.btn-primary:hover {
+    background: #3D47B8;
+    border-color: #3D47B8;
+}
+
+.btn-primary:disabled {
+    background: #D1D5DB;
+    border-color: #D1D5DB;
+    cursor: not-allowed;
+}
+
+/* Upload Container - Step 3 */
+.upload-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 0;
+}
+
+.image-frame {
+    width: 100%;
+    max-width: 480px;
+    height: 320px;
+    border: 2px dashed rgba(112, 122, 242, 0.8);
+    border-radius: 16px;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.image-frame:hover {
+    border-color: #4C58DF;
+    background: rgba(76, 88, 223, 0.05);
+}
+
+.image-frame.has-image {
+    border-style: solid;
+}
+
+.placeholder {
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+
+.placeholder-icon {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.placeholder-icon > div {
+    background-color: #707AF2;
+    position: absolute;
+}
+
+.placeholder-icon > div:first-child {
+    width: 60px;
+    height: 3px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.placeholder-icon > div:last-child {
+    width: 3px;
+    height: 60px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#campaign-preview {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    display: none;
+}
+
+#campaign-preview.active {
+    display: block;
+}
+
+.upload-hint {
+    margin-top: 16px;
+    font-size: 14px;
+    color: #6B7280;
+    text-align: center;
+}
+
+/* Character Counter - Step 4 */
+.char-counter {
+    text-align: right;
+    font-size: 14px;
+    color: #6B7280;
+    margin-top: 8px;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+/* Campaign Preview Card - Step 5 */
+.campaign-preview-card {
+    background: white;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    max-width: 890px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+
+.campaign-card {
+    background: white;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    width: 890px;
+    margin: 0 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+
+.campaign-header {
+    max-width: 890px;
+    background: rgba(112, 122, 242, 0.1);
+    border: 2px dashed #707AF2;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.campaign-header .emoji {
+    flex-shrink: 0;
+}
+
+.campaign-header .emoji i {
+    display: flex !important; 
+    align-items: center;
+    justify-content: center;
+    width: 100%;            
+    height: 100%;              
+}
+
+.gradient-icon {
+    font-size: 40px;
+    display: inline-block; 
+    background: linear-gradient(90deg, #7A3FFF, #707AF2);
+    -webkit-background-clip: text;
+    color: transparent;
+    
+}
+
+.campaign-header p {
+    margin: 0;
+    color: #000000BF;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.verified-profile {
+    width: 50px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+
+.verified-profile i {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #E5E7EB;
+    height: fit-content;
+    position: absolute;
+    color: #7A3FFF;
+    left: 0;
+    bottom: 0;
+}
+
+.user-details {
+    flex: 1;
+}
+
+.user-name {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+.user-meta {
+    margin: 0;
+    font-size: 15px;
+    color: #666;
+}
+
+.bookmark-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.bookmark-btn i {
+    color: #7A3FFF;
+    font-size: 30px;
+    width: 30px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bookmark-btn i:hover {
+    background-color: #7A3FFF;
+    -webkit-background-clip: text;
+}
+
+.campaign-image {
+    position: relative;
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 16px;
+}
+
+.campaign-image img {
+    display: block;
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+
+.campaign-badge {
+    width: 160px;
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    background: #60A5FA;
+    color: white;
+    padding: 3px 12px;
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: 400;
+    text-shadow: 1px 1px 6px rgba(0,0,0,0.3);
+    text-align: center;
+}
+
+.campaign-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #000000BF;
+    margin: 0 0 12px 0;
+}
+
+.campaign-description {
+    font-size: 16px;
+    font-weight: 300;
+    color: #000000BF;
+    line-height: 1.6;
+    margin: 0 0 20px 0;
+}
+
+.campaign-progress {
+    background-color: #7A3FFF14;
+    border: 1px solid #7A3FFF;
+    border-radius: 9px;
+    padding: 16px 12px;
+    margin-bottom: 20px;
+}
+
+
+.progress-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.progress-amount {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    color: #000000BF;
+    gap: 12px;
+}
+
+.progress-amount i {
+    width: 35px;
+    height: 30px;
+    font-size: 30px;
+    text-align: center;
+    color: #7A3FFF;
+}
+
+.progress-percentage {
+    font-size: 16px;
+    color: #000000BF;
+}
+
+.progress-bar-green {
+    width: 100%;
+    height: 8px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.3),
+        transparent
+    );
+    outline: 0.5px solid black;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-fill-green {
+    height: 100%;
+    background: #04F468;
+    outline: 0.5px solid black;
+    border-radius: 10px;
+    transition: width 0.3s ease;
+    width: var(--percent);
+}
+
+.campaign-actions {
+    display: flex;
+    gap: 12px;
+}
+
+.btn {
+    height: fit-content;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.donate-btn {
+    background: #7A3FFF;
+    border: 2px solid #7A3FFF;
+    color: #fcf9fc;
+}
+
+.donate-btn:hover {
+    background: #793fffc5;
+}
+
+.see-more-btn {
+    background: white;
+    color: #707AF2;
+    border: 2px solid #E5E7EB;
+}
+
+.see-more-btn:hover {
+    background: #F9FAFB;
+}
+
+.quick-actions {
+    display: flex;
+    gap: 8px;
+    margin-left: auto;
+}
+
+.action-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #707AF2;
+    color: white;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.action-btn i {
+    padding: 1px;
+}
+
+.action-btn:hover {
+    background: #5A63D8;
+    transform: translateY(-2px);
+    color: white !important;
+}
+
+.vote-count {
+    padding: 3px 1px;
+    font-weight: 500;
+    gap: 2px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.vote-number.hidden {
+    display: none;
+}
+
+.upvoted, .downvoted, .copied {
+    background: #5A63D8;
+}
+
+.save-campaign {
+    position: fixed;
+    top: 92vh;
+    left: 52vw;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px 24px;
+    border-radius: 9px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    background: #707AF2;
+    color: #fcf9fc;
+    animation: slideIn 0.4s ease;
+}
+
+.save-campaign i {
+    padding: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.save-campaign.show {
+    display: flex;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    } to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.preview-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+}
+
+.creator-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.creator-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.creator-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #111827;
+}
+
+.bookmark-btn {
+    width: 36px;
+    height: 36px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 20px;
+    color: #6B7280;
+    transition: color 0.3s ease;
+}
+
+.bookmark-btn:hover {
+    color: #4C58DF;
+}
+
+.preview-image {
+    position: relative;
+    width: 100%;
+    height: 280px;
+    overflow: hidden;
+}
+
+.preview-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.category-badge {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    padding: 8px 16px;
+    background: #4C58DF;
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 20px;
+}
+
+.preview-content {
+    padding: 24px 20px;
+}
+
+.preview-content h2 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 12px;
+}
+
+.preview-content p {
+    font-size: 14px;
+    color: #6B7280;
+    line-height: 1.6;
+    margin-bottom: 24px;
+}
+
+.progress-section {
+    margin-bottom: 24px;
+}
+
+.goal-progress {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.amount-raised {
+    font-size: 18px;
+    font-weight: 700;
+    color: #111827;
+}
+
+.goal-amount {
+    font-size: 14px;
+    color: #6B7280;
+}
+
+.progress-bar-preview {
+    height: 8px;
+    background: #E5E7EB;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 8px;
+}
+
+.progress-fill-preview {
+    height: 100%;
+    background: linear-gradient(to right, #4C58DF, #7C3AED);
+    border-radius: 10px;
+}
+
+.supporters {
+    font-size: 14px;
+    color: #6B7280;
+    margin: 0;
+}
+
+.btn-donate {
+    width: 100%;
+    padding: 14px;
+    background: #4C58DF;
+    border: none;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-bottom: 16px;
+}
+
+.btn-donate:hover {
+    background: #3D47B8;
+}
+
+.campaign-actions {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+}
+
+.action-btn {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #E5E7EB;
+    background: white;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 16px;
+    color: #6B7280;
+    transition: all 0.3s ease;
+}
+
+.action-btn:hover {
+    border-color: #4C58DF;
+    color: #4C58DF;
+}
+
+/* Rules Container - Step 6 */
+.rules-container {
+    max-width: 600px;
+    margin: 0 auto;
+    border: 2px solid #E5E7EB;
+    border-radius: 16px;
+    padding: 32px;
+    background: #F9FAFB;
+}
+
+.rules-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.rules-header i {
+    font-size: 24px;
+    color: #4C58DF;
+}
+
+.rules-header h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #111827;
+    margin: 0;
+}
+
+.rules-content {
+    background: white;
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 24px;
+}
+
+.rules-intro {
+    font-size: 14px;
+    color: #111827;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.rules-list {
+    padding-left: 24px;
+    margin: 0;
+}
+
+.rules-list li {
+    font-size: 14px;
+    color: #4B5563;
+    line-height: 1.8;
+    margin-bottom: 8px;
+}
+
+.checkbox-group {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin-top: 2px;
+    cursor: pointer;
+    accent-color: #4C58DF;
+}
+
+.checkbox-group label {
+    flex: 1;
+    font-size: 14px;
+    color: #4B5563;
+    line-height: 1.6;
+    cursor: pointer;
+}
+
+/* Success Body - Step 7 */
+.success-body {
+    text-align: center;
+    padding: 20px;
+}
+
+.success-icon {
+    width: 200px;
+    height: 100px;
+    margin: 0 auto 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    overflow: hidden;
+}
+
+.success-icon i {
+    font-size: 80px;
+    color: #4C58DF;
+    padding: 10px;
+}
+
+.success-body h1 {
+    font-size: 36px;
+    margin-bottom: 12px;
+}
+
+.success-body .subtitle {
+    margin-bottom: 40px;
+}
+
+.success-preview {
+    position: relative;
+    width: 100%;
+    max-width: 360px;
+    height: 240px;
+    margin: 0 auto 24px;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.success-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.success-info {
+    max-width: 360px;
+    margin: 0 auto 32px;
+    text-align: left;
+}
+
+.success-info h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 12px;
+}
+
+.success-info p {
+    font-size: 14px;
+    color: #6B7280;
+    line-height: 1.6;
+    margin-bottom: 16px;
+}
+
+.btn-view {
+    padding: 10px 24px;
+    background: #4C58DF;
+    border: none;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn-view:hover {
+    background: #3D47B8;
+}
+
+.success-message {
+    font-size: 14px;
+    color: #6B7280;
+    margin: 40px 0;
+}
+
+/* QR Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 24px;
+    padding: 40px;
+    max-width: 480px;
+    width: 90%;
+    position: relative;
+}
+
+.modal-content h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 8px;
+}
+
+.modal-content p {
+    font-size: 14px;
+    color: #6B7280;
+    margin-bottom: 32px;
+}
+
+.qr-upload-area {
+    border: 2px dashed #D1D5DB;
+    border-radius: 16px;
+    text-align: center;
+    margin-bottom: 32px;
+    min-height: 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.qr-upload-area:hover {
+    background: rgba(76, 88, 223, 0.05);
+    border-color: #4C58DF;
+}
+
+.btn-photo {
+    padding: 100px 100px;
+    background: none;
+    color: #4C58DF;
+    font-size: 31px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-photo i {
+    font-size: 31px;
+}
+
+.qr-preview-container {
+    margin-top: 20px;
+    max-width: 100%;
+}
+
+#qr-preview {
+    max-width: 100%;
+    max-height: 240px;
+    border-radius: 12px;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .campaign-creation-container {
+        padding: 20px 12px;
+    }
+    
+    .step-content {
+        padding: 24px 20px;
+    }
+    
+    .step-body h1 {
+        font-size: 24px;
+    }
+    
+    .category-grid {
+        gap: 12px;
+    }
+    
+    .payment-methods {
+        grid-template-columns: 1fr;
+    }
+    
+    .btn-next {
+        bottom: 20px;
+        right: 20px;
+        width: 56px;
+        height: 56px;
+    }
+}
+
+
+/* Step 5 Specific Styles - Centered Campaign Card Preview */
+.step-5-header {
+    width: 42vw;
+    justify-self: center;
+}
+/* Make Step 5 full-width to accommodate centering */
+#step-5.step-content {
+    max-width: 100%;
+    width: 100%;
+    padding: 40px 20px;
+}
+
+/* Center all content in Step 5 body */
+#step-5 .step-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Center headings */
+#step-5 .step-body h1 {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 12px;
+}
+
+#step-5 .step-body .subtitle {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+/* Center the campaign preview card container */
+#step-5 .campaign-preview-card {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto 40px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Ensure step actions buttons stay at bottom */
+#step-5 .step-actions {
+    width: 100%;
+    max-width: 720px;
+    margin-top: 40px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+}
+/* Responsive adjustments for Step 5 */
+@media (max-width: 768px) {
+    #step-5.step-content {
+        padding: 24px 12px;
+    }
+    
+    #step-5 .campaign-preview-card {
+        max-width: 100%;
+        padding: 0;
+    }
+    
+    #step-5 .campaign-card {
+        max-width: 100%;
+    }
+    
+    #step-5 .step-actions {
+        max-width: 100%;
+        padding: 0 12px;
+    }
+    
+    #step-5 .step-body h1 {
+        font-size: 24px;
+    }
+}
+
+
+
+.campaign-card-sm {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    max-width: 640px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: relative;
+}
+
+.campaign-card-sm.hide {
+    display: none;
+} 
+
+.campaign-card-sm:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.campaign-card-sm-header {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.campaign-card-sm-avatar {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 2px;
+    justify-content: center;
+}
+
+.campaign-card-sm-avatar img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    outline: 2px solid #7A3FFF;
+}
+
+.campaign-card-sm-avatar i {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #E5E7EB;
+    height: fit-content;
+    position: absolute;
+    color: #7A3FFF;
+    left: 0;
+    bottom: 0;
+}
+
+.campaign-card-sm-user-info {
+    flex: 1;
+}
+
+.campaign-card-sm-user-name {
+    text-align: left;
+    padding: 4px;
+    font-size: 16px;
+    font-weight: 400;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.9),
+                -1px -1px 3px rgba(0,0,0,0.7);
+    color: #ffffff;
+}
+
+.campaign-card-sm-user-meta {
+    margin: 0;
+    padding:4px;
+    font-size: 14px;
+    font-weight: 300;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.9),
+                -1px -1px 3px rgba(0,0,0,0.7);  
+    color: #ffffff;
+}
+
+.campaign-card-sm-badge { 
+    background: #707AF2;
+    color: white;
+    padding: 6px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.campaign-card-sm-image {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+}
+
+.campaign-card-sm-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.badge-funded-percent {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.campaign-card-sm-progress-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0; 
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+    padding: 16px;
+}
+
+.campaign-card-sm-raised {
+    margin: 0 0 8px 0;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.9),
+                -1px -1px 3px rgba(0,0,0,0.7);  
+    font-size: 14px;
+    font-weight: 300;
+    text-align: left;
+}
+
+.campaign-card-sm-progress-bar {
+    width: 100%;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.campaign-card-sm-progress-fill {
+    height: 100%;
+    width: var(--percentWidth);
+    background: #04F468;
+    border-radius: 10px;
+    transition: width 0.3s ease;
+}
+
+.campaign-card-sm-content {
+    padding: 15px;
+}
+
+.campaign-card-sm-funded {
+    background: #7A3FFF14;
+    color: #7A3FFF;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 300;
+    border: 1px solid #7A3FFF;
+}
+
+.campaign-card-sm-title {
+    padding: 10px 0;
+    font-size: 25px;
+    font-weight: 600;
+    color: #000000BF;
+    text-align: left;
+}
+
+.campaign-card-sm-description {
+    margin: 0 0 16px 0;
+    font-size: 16px;
+    font-weight: 300;
+    color: #000000BF;
+    line-height: 1.6;
+    text-align: left;
+}
+
+.campaign-card-sm-btn {
+    display: inline-block;
+    background: #707AF2;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+
+.campaign-card-sm-btn:hover {
+    background: #5A63D8;
+}
+
+.badge-funded-percent .campaign-badge-detail {
+    position: static;
+    padding: 5px 0;
+}
+
+.bookmark-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1;
+}
+
+.bookmark-btn.hidden {
+    display: none;
+}
+
+.bookmark-btn.shown {
+    display: block;
+}
+
+.campaign-card-sm-btn.disabled {
+    background-color: #9fa6f1;
+}
+
+.preview-con {
+    width: fit-content !important;
+} 
+
+/* Flash Message System */
+.flash-message {
+    position: fixed;
+    top: 20px;
+    z-index: 10000;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    padding: 16px 20px;
+    min-width: 300px;
+    max-width: 400px;
+    opacity: 0;
+    transform: translateX(400px);
+    transition: all 0.3s ease;
+}
+
+.flash-message.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.flash-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.flash-content i {
+    font-size: 20px;
+    flex-shrink: 0;
+}
+
+.flash-content span {
+    font-size: 14px;
+    color: #374151;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+/* Success Flash */
+.flash-success {
+    border-left: 4px solid #10B981;
+}
+
+.flash-success i {
+    color: #10B981;
+}
+
+/* Error Flash */
+.flash-error {
+    border-left: 4px solid #EF4444;
+}
+
+.flash-error i {
+    color: #EF4444;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .flash-message {
+        top: 10px;
+        right: 10px;
+        left: 10px;
+        min-width: auto;
+        max-width: none;
+    }
+    
+    .flash-message.show {
+        transform: translateY(0);
+    }
+    
+    .flash-message {
+        transform: translateY(-100px);
+    }
+}

@@ -10,6 +10,10 @@
     position: relative;
 }
 
+.campaign-card-sm.hide {
+    display: none;
+} 
+
 .campaign-card-sm:hover {
     transform: translateY(-4px);
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
@@ -118,6 +122,7 @@
 }
 
 .campaign-card-sm-raised {
+    text-align: left;
     margin: 0 0 8px 0;
     color: white;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.9),
@@ -154,9 +159,10 @@
     font-size: 14px;
     font-weight: 300;
     border: 1px solid #7A3FFF;
-}
+} 
 
 .campaign-card-sm-title {
+    text-align: left;
     padding: 10px 0;
     font-size: 25px;
     font-weight: 600;
@@ -190,4 +196,34 @@
 .badge-funded-percent .campaign-badge-detail {
     position: static;
     padding: 5px 0;
+}
+
+.campaign-badge-detail {
+    width: 160px;
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    background: #60A5FA;
+    color: white;
+    padding: 3px 12px;
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: 400;
+    text-shadow: 1px 1px 6px rgba(0,0,0,0.3);
+    text-align: center;
+}
+
+.bookmark-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1;
+}
+
+.bookmark-btn.hidden {
+    display: none;
+}
+
+.bookmark-btn.shown {
+    display: block;
 }
